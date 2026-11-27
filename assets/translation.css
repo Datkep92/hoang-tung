@@ -7,3 +7,5 @@ iframe.skiptranslate,
   display: none !important;
 }
 body { top: 0 !important; }
+/* Reserve enough room for the flag, language code, and native select arrow. */
+header .language-picker select, header #site-language { width: 84px !important; }
