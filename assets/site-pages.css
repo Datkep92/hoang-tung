@@ -1,0 +1,3 @@
+html { touch-action: pan-x pan-y; }
+.site-pages { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; margin:20px auto 0; }
+.site-pages a { color:inherit; padding:6px 2px; }
