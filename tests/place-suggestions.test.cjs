@@ -5,11 +5,22 @@ const html = fs.readFileSync('index.html', 'utf8');
 
 assert(!html.includes('list="places"'), 'native datalist still linked');
 assert(!html.includes('<datalist'), 'datalist still present');
-assert(html.includes('>Điểm đi<input'), 'pickup label not renamed');
-assert(html.includes('>Điểm đến<input'), 'drop label missing');
+assert(!html.includes('>Điểm đi<input'), 'pickup label still visible');
+assert(!html.includes('>Điểm đến<input'), 'drop label still visible');
+for (const [id, text] of [['pickup', 'Nhập điểm đón'], ['drop', 'Nhập điểm đến']]) {
+  assert(html.includes(`id="${id}" placeholder="${text}"`), `${id} placeholder missing`);
+  assert(html.includes(`aria-label="${text}"`), `${id} aria-label missing`);
+}
+assert(html.includes('"Nhập điểm đón", "Nhập điểm đến"'), 'language dictionary not updated');
 for (const id of ['pickup', 'drop']) {
   assert(html.includes(`id="${id}-suggestions"`), `${id} suggestion box missing`);
   assert(html.includes(`aria-label="Gợi ý ${id === 'pickup' ? 'điểm đi' : 'điểm đến'}"`), `${id} suggestion label missing`);
+}
+for (const needle of ['>Họ và tên<input', '>Số điện thoại<input', '>Loại xe<select', '<p class="full address-hint">', 'Nhập địa chỉ, tên khách sạn, resort']) {
+  assert(!html.includes(needle), needle);
+}
+for (const label of ['Họ và tên', 'Số điện thoại', 'Loại xe']) {
+  assert(html.includes(`aria-label="${label}"`), `aria-label ${label} missing`);
 }
 assert(!html.includes('id="swap-route"'), 'swap button still visible');
 assert(!html.includes('Đổi chiều đi'), 'swap text still visible');
