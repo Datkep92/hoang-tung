@@ -51,7 +51,9 @@ function setup(opts = {}) {
   assert.match(x.nodes.status.textContent, /chưa cho tạo chủ đề/);
 
   assert(html.includes('id="send-tg"'));
-  assert(html.includes('vị trí theo IP'));
+  assert(html.includes('>Gửi ngay</button>'));
+  assert(html.indexOf('id="send-tg"') < html.indexOf('class="full chat-options"'));
+  assert(!html.includes('id="consent"'));
   assert(!html.includes('formsubmit.co/ajax/'));
   console.log('PASS: Telegram button, one topic per order, IP location, topic-failure fallback');
 })().catch(e => { console.error(e); process.exitCode = 1; });

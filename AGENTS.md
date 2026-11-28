@@ -6,3 +6,4 @@
 - Các test hiện có: `booking-channel.test.cjs` (Zalo/WhatsApp), `booking-telegram.test.cjs` (Telegram), `language-restore.test.cjs` (ngôn ngữ).
 - Form đặt xe nằm ở `index.html`; trang có nhiều dòng rất dài, đọc/ghi theo đoạn thay vì đọc cả tệp.
 - Telegram: cấu hình ở dòng đầu `index.html`. Nhóm nhận `Xe Hà Tùng` (`-1005834025079`) đã bật forum topic. Token mới hợp lệ; bot đã được cấp quyền Quản lý chủ đề. Đã thử thật 10 đơn mẫu: tạo 10 chủ đề riêng, gửi đơn kèm IP/vị trí vào từng chủ đề, rồi đóng hết — đều thành công. Không đẩy lên GitHub khi chưa được Sếp yêu cầu. Cập nhật `Documents/Guides/00-status.md` khi thay đổi tiếp.
+- Form hiện không có ô đồng ý; nút gửi Telegram là `Gửi ngay`, đặt trước hai nút Zalo/WhatsApp trong dãy chọn kênh. Các test mã nguồn đạt; chưa xem trực quan trên màn hình vì Apelin đang chiếm màn hình.

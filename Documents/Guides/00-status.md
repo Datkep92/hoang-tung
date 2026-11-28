@@ -6,3 +6,4 @@
 - Nhóm nhận: `Xe Hà Tùng` (`-1005834025079`), đã bật forum topic. Bot đã được cấp quyền tạo chủ đề.
 - Kiểm tra: `node tests/booking-channel.test.cjs`, `node tests/booking-telegram.test.cjs`, `node tests/language-restore.test.cjs`.
 - Đã kiểm chứng trên Telegram thật: 10 đơn mẫu, mỗi đơn một chủ đề (`TEST 01/10` đến `TEST 10/10`), nội dung có IP/vị trí, tất cả chủ đề đã đóng. Chưa thử bấm nút trên giao diện web; các test mã nguồn đều đạt.
+- Giao diện: đã gỡ ô đồng ý, nút Telegram đổi thành `Gửi ngay`, đặt trước hai nút Zalo/WhatsApp trong dãy chọn kênh. Test cấu trúc và logic đạt; chưa xem trực quan trên màn hình vì Apelin đang chiếm màn hình.
