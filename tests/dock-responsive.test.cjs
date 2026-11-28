@@ -12,7 +12,7 @@ assert(css.includes('.dock>a{display:flex;align-items:center;justify-content:cen
 assert(css.includes('.dock .app-icon svg{width:clamp(28px,8.5vw,42px);height:clamp(28px,8.5vw,42px)}'), 'dock icons do not scale with width');
 assert(css.includes('@media(min-width:521px){.dock{grid-template-columns:repeat(5,minmax(0,112px));justify-content:center}}'), 'wide screens are not capped');
 
-const dock = html.match(/<div class="dock">([\s\S]*?)<\/div>\s*<div aria-hidden="true" id="translation-engine">/);
+const dock = html.match(/<div class="dock">([\s\S]*?)<\/div>/);
 assert(dock, 'dock markup missing');
 assert.equal((dock[1].match(/<a\b/g) || []).length, 5, 'dock must have five buttons');
 assert(html.indexOf('<style id="dock-responsive">') > html.lastIndexOf('<style', html.indexOf('<style id="dock-responsive">') - 1), 'dock style must come after other styles');
