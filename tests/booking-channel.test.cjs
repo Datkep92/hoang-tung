@@ -7,7 +7,7 @@ assert(script, 'booking channel code missing');
 function setup(valid=true, clipboardWorks=true) {
   const values={fullname:'Nguyễn An',phone:'0901234567',seat:'1',pickup:'Sân bay Cam Ranh',drop:'Phan Rang',date:'2026-12-01',time:'10:30',note:'2 khách',quote:'Giá một chiều: 600.000đ','website-check':''};
   const nodes={}; for(const [id,value] of Object.entries(values)) nodes[id]={value, textContent:id==='quote'?value:'',hidden:true,select(){this.selected=true}};
-  for(const id of ['send-wa','send-zalo','open-wa','open-zalo','copy-booking','status']) nodes[id]={hidden:true,addEventListener(type,fn){this.handler=fn},select(){this.selected=true}};
+  for(const id of ['send-wa','send-zalo','send-tg','open-wa','open-zalo','copy-booking','status']) nodes[id]={hidden:true,addEventListener(type,fn){this.handler=fn},select(){this.selected=true}};
   nodes.booking={reportValidity:()=>valid}; const calls=[]; const clipboard=[];
   const context={document:{getElementById:id=>nodes[id]},window:{open:(...args)=>calls.push(args)},navigator:{clipboard:{writeText:async t=>{if(!clipboardWorks)throw Error('unavailable');clipboard.push(t)}}},track:()=>{},encodeURIComponent};
   vm.runInNewContext(script,context);return {nodes,calls,clipboard};
