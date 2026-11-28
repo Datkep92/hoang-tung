@@ -5,5 +5,4 @@
   `/private/preboot/3AF6782635474BDFDAC1E400BB78A129DC1925AA852AE1AA4D715D48A47FF72420036E56CBC6BD1507653A2FA27357CA/dopamine-nsEG4w/procursus/usr/local/bin/node.real --jitless tests/<tên-test>.cjs`
 - Các test hiện có: `booking-channel.test.cjs` (Zalo/WhatsApp), `booking-telegram.test.cjs` (Telegram), `language-restore.test.cjs` (ngôn ngữ).
 - Form đặt xe nằm ở `index.html`; trang có nhiều dòng rất dài, đọc/ghi theo đoạn thay vì đọc cả tệp.
-- Telegram: cấu hình ở dòng đầu `index.html`. Nhóm nhận `Xe Hà Tùng` (`-1005834025079`) đã bật forum topic. Trường `telegramBot` đang để trống vì token Sếp cung cấp bị Telegram trả 401; nhập token mới vào đó trước khi thử gửi thật.
-- Không đẩy lên GitHub khi chưa được Sếp yêu cầu. Cập nhật `Documents/Guides/00-status.md` khi thay đổi tiếp.
+- Telegram: cấu hình ở dòng đầu `index.html`. Nhóm nhận `Xe Hà Tùng` (`-1005834025079`) đã bật forum topic. Token mới đã được điền và kiểm tra hợp lệ; bot là quản trị viên nhưng **chưa có quyền Quản lý chủ đề** (`can_manage_topics: false`), nên tạo topic bị Telegram từ chối. Cấp quyền đó trong phần quản trị bot của nhóm để mỗi đơn có một chủ đề riêng. Không đẩy lên GitHub khi chưa được Sếp yêu cầu. Cập nhật `Documents/Guides/00-status.md` khi thay đổi tiếp.
